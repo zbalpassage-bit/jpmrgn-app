@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="J.P. Morgan"/>
+<meta name="theme-color" content="#ffffff"/>
+<link rel="apple-touch-icon" href="data:image/png;base64,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"/>
+<title>J.P. Morgan Private Bank</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css"/>
+<style>
+:root {
+  --teal:#00b388;--dark:#0a0a0a;--gray-bg:#f2f2f7;--border:#e5e5e5;
+  --text-primary:#000;--text-secondary:#666;--text-muted:#999;
+  --green-pos:#2e7d32;--red-neg:#c62828;--card-bg:#fff;
+  --safe-top:env(safe-area-inset-top,0px);--safe-bot:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',sans-serif;background:#000;}
+#app{width:100%;height:100%;position:relative;overflow:hidden;background:#f2f2f7;}
+
+/* LOCK */
+#lock-screen{position:absolute;inset:0;z-index:1000;background:linear-gradient(160deg,#0a0a0a 0%,#1a2a1a 50%,#0a1a0a 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 32px calc(40px + var(--safe-bot));}
+.lock-logo{font-size:11px;letter-spacing:2px;color:#888;text-transform:uppercase;margin-bottom:8px;}
+.lock-brand{font-size:22px;font-weight:300;color:#fff;letter-spacing:0.5px;margin-bottom:4px;}
+.lock-sub{font-size:13px;color:#555;margin-bottom:60px;}
+.lock-welcome{font-size:28px;font-weight:600;color:#fff;margin-bottom:8px;text-align:center;}
+.lock-hint{font-size:14px;color:#666;margin-bottom:60px;text-align:center;}
+.faceid-btn{width:72px;height:72px;border-radius:50%;border:2px solid rgba(0,179,136,0.4);background:rgba(0,179,136,0.1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;position:relative;}
+.faceid-btn:active{transform:scale(0.93);background:rgba(0,179,136,0.25);}
+.faceid-btn i{font-size:36px;color:var(--teal);}
+.faceid-ring{position:absolute;inset:-8px;border-radius:50%;border:1.5px solid rgba(0,179,136,0.2);animation:pulse-ring 2s ease-out infinite;}
+@keyframes pulse-ring{0%{transform:scale(1);opacity:0.6;}100%{transform:scale(1.5);opacity:0;}}
+.faceid-label{font-size:13px;color:#666;margin-top:16px;}
+.hidden{display:none!important;}
+
+/* SCAN */
+#scan-overlay{position:absolute;inset:0;z-index:1001;background:rgba(0,0,0,0.85);display:none;flex-direction:column;align-items:center;justify-content:center;gap:24px;}
+#scan-overlay.show{display:flex;}
+.scan-box{width:200px;height:200px;position:relative;border-radius:20px;overflow:hidden;}
+.scan-corner{position:absolute;width:24px;height:24px;}
+.scan-corner.tl{top:0;left:0;border-top:3px solid var(--teal);border-left:3px solid var(--teal);border-radius:4px 0 0 0;}
+.scan-corner.tr{top:0;right:0;border-top:3px solid var(--teal);border-right:3px solid var(--teal);border-radius:0 4px 0 0;}
+.scan-corner.bl{bottom:0;left:0;border-bottom:3px solid var(--teal);border-left:3px solid var(--teal);border-radius:0 0 0 4px;}
+.scan-corner.br{bottom:0;right:0;border-bottom:3px solid var(--teal);border-right:3px solid var(--teal);border-radius:0 0 4px 0;}
+.scan-line{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent);animation:scan 1.5s ease-in-out infinite;}
+@keyframes scan{0%{top:0;}50%{top:calc(100% - 2px);}100%{top:0;}}
+.scan-text{font-size:15px;color:#fff;}
+
+/* MAIN */
+#main-app{width:100%;height:100%;display:none;flex-direction:column;}
+#main-app.show{display:flex;}
+.screen{display:none;flex-direction:column;flex:1;overflow:hidden;}
+.screen.active{display:flex;}
+
+/* HOME HERO */
+.home-hero{background:var(--card-bg);padding:calc(var(--safe-top) + 14px) 20px 20px;flex-shrink:0;}
+.home-toprow{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
+.welcome-text{font-size:13px;color:var(--text-secondary);}
+.welcome-name{font-size:20px;font-weight:700;color:var(--text-primary);}
+.nmv-label{font-size:12px;color:var(--text-secondary);text-align:center;display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:4px;}
+.nmv-value{font-size:28px;font-weight:700;color:var(--text-primary);text-align:center;letter-spacing:-0.5px;}
+.nmv-ccy{font-size:16px;font-weight:400;color:var(--text-muted);}
+.stats-row{display:flex;justify-content:space-between;margin-top:14px;padding-top:14px;border-top:0.5px solid var(--border);}
+.stat-item{flex:1;text-align:center;}
+.stat-label{font-size:11px;color:var(--text-muted);margin-bottom:3px;}
+.stat-val{font-size:15px;font-weight:600;color:var(--text-primary);}
+
+/* CARDS */
+.section-card{background:var(--card-bg);border-radius:16px;margin:10px 14px 0;overflow:hidden;flex-shrink:0;}
+.section-header{display:flex;justify-content:space-between;align-items:center;padding:14px 16px 10px;}
+.section-title-text{font-size:17px;font-weight:700;color:var(--text-primary);}
+.section-link-pill{font-size:13px;color:var(--text-primary);background:#f0f0f0;border-radius:20px;padding:5px 12px;display:flex;align-items:center;gap:3px;}
+
+/* ALLOC */
+.alloc-bar-track{display:flex;height:10px;margin:0 16px 12px;border-radius:5px;overflow:hidden;gap:2px;}
+.alloc-seg{height:100%;border-radius:3px;transition:flex 0.4s;}
+.alloc-list{padding:0 16px 14px;}
+.alloc-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px;font-size:14px;}
+.alloc-dot{width:8px;height:8px;border-radius:50%;margin-right:8px;flex-shrink:0;}
+.alloc-name{color:#444;flex:1;}
+.alloc-pct{font-size:14px;color:#333;font-weight:500;}
+
+/* ACCOUNTS */
+.acct-tabs{display:flex;background:#f0f0f0;border-radius:20px;padding:2px;margin:0 16px 8px;}
+.acct-tab{flex:1;text-align:center;padding:7px 0;border-radius:18px;font-size:13px;font-weight:500;color:#666;cursor:pointer;border:none;background:transparent;}
+.acct-tab.active{background:#222;color:#fff;}
+.acct-item{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-top:0.5px solid #f0f0f0;}
+.acct-item .a-main{font-size:13px;font-weight:600;color:var(--text-secondary);}
+.acct-item .a-sub{font-size:12px;color:var(--text-muted);margin-top:2px;}
+
+/* PORTFOLIO */
+.port-tab-row{display:flex;gap:8px;padding:0 16px 12px;background:var(--card-bg);overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.port-tab-row::-webkit-scrollbar{display:none;}
+.port-tab{padding:7px 14px;border-radius:20px;font-size:13px;font-weight:500;white-space:nowrap;cursor:pointer;border:1.5px solid var(--border);color:#333;background:var(--card-bg);}
+.port-tab.active{background:#222;color:#fff;border-color:#222;}
+.filter-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:var(--card-bg);border-bottom:0.5px solid #eee;}
+.fb-left{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--text-primary);font-weight:500;}
+.asset-block{background:var(--card-bg);margin-top:8px;}
+.asset-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px 6px;}
+.asset-h-title{font-size:15px;font-weight:700;color:var(--text-primary);}
+.green-badge{background:#e8f5e8;color:#2a7a2a;font-size:12px;padding:3px 10px;border-radius:12px;font-weight:500;}
+.pos-header{display:flex;justify-content:space-between;padding:4px 16px 6px;font-size:11px;color:var(--text-muted);}
+.pos-row{display:flex;align-items:center;padding:10px 16px;border-top:0.5px solid #f5f5f5;}
+.flag-circle{width:34px;height:34px;border-radius:50%;margin-right:12px;flex-shrink:0;font-size:20px;display:flex;align-items:center;justify-content:center;}
+.pos-name{font-size:14px;font-weight:500;color:var(--text-primary);flex:1;}
+.pos-val{font-size:14px;font-weight:500;color:var(--text-primary);text-align:right;}
+.pos-chg{font-size:12px;text-align:right;}
+
+/* MARKETS */
+.mkt-item{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-top:0.5px solid #f5f5f5;}
+.mkt-ticker{font-size:14px;font-weight:600;color:var(--text-primary);}
+.mkt-name{font-size:12px;color:var(--text-muted);margin-top:2px;}
+.mkt-price{font-size:14px;font-weight:500;text-align:right;}
+.mkt-chg{font-size:12px;text-align:right;margin-top:2px;}
+.insight-card{background:#1a1a1a;border-radius:12px;margin:0 14px 10px;padding:16px;}
+.ins-tag{font-size:10px;color:var(--teal);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:6px;}
+.ins-title{font-size:14px;font-weight:500;color:#fff;line-height:1.4;margin-bottom:8px;}
+.ins-date{font-size:11px;color:#555;}
+
+/* MESSENGER */
+.msg-list{flex:1;overflow-y:auto;padding:12px 16px;display:flex;flex-direction:column;gap:8px;}
+.msg-bubble{padding:10px 14px;border-radius:18px;max-width:78%;font-size:14px;line-height:1.5;}
+.msg-bubble.them{background:var(--card-bg);border:0.5px solid var(--border);align-self:flex-start;color:var(--text-primary);border-bottom-left-radius:4px;}
+.msg-bubble.me{background:var(--teal);align-self:flex-end;color:#fff;border-bottom-right-radius:4px;}
+.msg-time{font-size:11px;color:var(--text-muted);text-align:center;margin-bottom:4px;}
+.msg-input-row{padding:10px 16px calc(10px + var(--safe-bot));background:var(--card-bg);border-top:0.5px solid var(--border);display:flex;gap:8px;align-items:center;flex-shrink:0;}
+.msg-input-row input{flex:1;border:0.5px solid var(--border);border-radius:20px;padding:9px 16px;font-size:14px;background:#f8f8f8;color:var(--text-primary);outline:none;}
+.msg-send-btn{width:36px;height:36px;border-radius:50%;background:var(--teal);border:none;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+
+/* SETTINGS */
+.settings-profile{background:var(--card-bg);padding:20px 16px 16px;display:flex;align-items:center;gap:14px;flex-shrink:0;}
+.profile-avatar{width:56px;height:56px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600;color:#fff;flex-shrink:0;}
+.profile-name{font-size:17px;font-weight:600;color:var(--text-primary);}
+.profile-sub{font-size:13px;color:var(--text-muted);margin-top:2px;}
+.profile-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;background:#f5e9cc;color:#7a5000;font-weight:500;margin-top:4px;}
+.settings-group-label{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;padding:14px 16px 6px;font-weight:500;}
+.settings-group{background:var(--card-bg);border-radius:14px;margin:0 14px;overflow:hidden;}
+.setting-row{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:0.5px solid #f0f0f0;font-size:15px;color:var(--text-primary);cursor:pointer;}
+.setting-row:last-child{border-bottom:none;}
+.setting-row .s-right{font-size:14px;color:var(--text-muted);display:flex;align-items:center;gap:4px;}
+.setting-row .s-on{color:#2e7d32;font-size:14px;}
+
+/* EDIT */
+.edit-group{background:var(--card-bg);border-radius:14px;margin:0 14px;overflow:hidden;}
+.edit-field-row{padding:10px 16px;border-bottom:0.5px solid #f0f0f0;}
+.edit-field-row:last-child{border-bottom:none;}
+.edit-field-row label{font-size:11px;color:var(--text-muted);display:block;margin-bottom:3px;}
+.edit-field-row input{width:100%;border:none;font-size:16px;font-weight:600;color:var(--text-primary);outline:none;background:transparent;padding:0;}
+.save-btn{background:#1a1a1a;color:#fff;border:none;border-radius:14px;padding:15px;width:calc(100% - 28px);margin:14px 14px 0;font-size:16px;font-weight:600;cursor:pointer;}
+
+/* NAV */
+.bottom-nav{background:var(--card-bg);border-top:0.5px solid var(--border);padding:8px 0 calc(8px + var(--safe-bot));display:flex;justify-content:space-around;flex-shrink:0;}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:2px 14px;}
+.nav-item span{font-size:10px;color:var(--text-muted);}
+.nav-item i{font-size:24px;color:var(--text-muted);}
+.nav-item.active i,.nav-item.active span{color:var(--teal);}
+
+.scroll-area{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:10px;}
+.pos{color:var(--green-pos);}.neg{color:var(--red-neg);}
+.info-circle{width:14px;height:14px;border-radius:50%;border:1.5px solid #aaa;display:inline-flex;align-items:center;justify-content:center;font-size:9px;color:#aaa;}
+</style>
+</head>
+<body>
+<div id="app">
+
+<div id="scan-overlay">
+  <div class="scan-box">
+    <div class="scan-corner tl"></div><div class="scan-corner tr"></div>
+    <div class="scan-corner bl"></div><div class="scan-corner br"></div>
+    <div class="scan-line"></div>
+  </div>
+  <div class="scan-text">Scanning Face ID…</div>
+</div>
+
+<div id="lock-screen">
+  <div class="lock-logo">J.P. Morgan</div>
+  <div class="lock-brand">Private Bank</div>
+  <div class="lock-sub">Secure client portal</div>
+  <div class="lock-welcome" id="lock-welcome-name">Welcome back,<br/>Ayoub</div>
+  <div class="lock-hint">Use Face ID to unlock</div>
+  <div class="faceid-btn" onclick="doFaceID()" id="faceid-btn">
+    <div class="faceid-ring"></div>
+    <i class="ti ti-face-id"></i>
+  </div>
+  <div class="faceid-label">Face ID</div>
+</div>
+
+<div id="main-app">
+
+  <!-- HOME -->
+  <div class="screen active" id="screen-home">
+    <div class="home-hero">
+      <div class="home-toprow">
+        <div>
+          <div class="welcome-text">Welcome back,</div>
+          <div class="welcome-name" id="disp-welcome-name">Ayoub Zakkour</div>
+        </div>
+        <i class="ti ti-search" style="font-size:22px;color:var(--text-primary);margin-top:4px;"></i>
+      </div>
+      <div class="nmv-label">Net market value <span class="info-circle">i</span></div>
+      <div class="nmv-value"><span id="disp-nmv">2,078,398.48</span> <span style="font-size:18px;font-weight:700;">USD</span> <span class="nmv-ccy">USD</span></div>
+      <div class="stats-row">
+        <div class="stat-item"><div class="stat-label">Investments</div><div class="stat-val" id="disp-inv">1.28M</div></div>
+        <div class="stat-item" style="border-left:0.5px solid var(--border);border-right:0.5px solid var(--border);">
+          <div class="stat-label">Net cash</div><div class="stat-val" id="disp-cash">0.94M</div>
+        </div>
+        <div class="stat-item"><div class="stat-label">Liabilities</div><div class="stat-val" id="disp-liab">-0.14M</div></div>
+      </div>
+    </div>
+    <div class="scroll-area">
+      <div class="section-card">
+        <div class="section-header">
+          <span class="section-title-text">Allocation</span>
+          <span class="section-link-pill">Summary <i class="ti ti-chevron-right" style="font-size:13px;"></i></span>
+        </div>
+        <div class="alloc-bar-track">
+          <div class="alloc-seg" id="seg-eq" style="flex:41.20;background:#00b388;"></div>
+          <div class="alloc-seg" id="seg-fi" style="flex:35.60;background:#a8d048;"></div>
+          <div class="alloc-seg" id="seg-alt" style="flex:12.30;background:#7c4dff;"></div>
+          <div class="alloc-seg" id="seg-div" style="flex:7.40;background:#1565c0;"></div>
+          <div class="alloc-seg" id="seg-oth" style="flex:3.50;background:#42a5f5;"></div>
+        </div>
+        <div class="alloc-list">
+          <div class="alloc-row"><span class="alloc-dot" style="background:#00b388;"></span><span class="alloc-name">Equity</span><span class="alloc-pct" id="pct-eq">41.20%</span></div>
+          <div class="alloc-row"><span class="alloc-dot" style="background:#a8d048;"></span><span class="alloc-name">Fixed income &amp; cash</span><span class="alloc-pct" id="pct-fi">35.60%</span></div>
+          <div class="alloc-row"><span class="alloc-dot" style="background:#7c4dff;"></span><span class="alloc-name">Alternative assets</span><span class="alloc-pct" id="pct-alt">12.30%</span></div>
+          <div class="alloc-row"><span class="alloc-dot" style="background:#1565c0;"></span><span class="alloc-name">Diversified strategies</span><span class="alloc-pct" id="pct-div">7.40%</span></div>
+          <div class="alloc-row" style="margin-bottom:0;"><span class="alloc-dot" style="background:#42a5f5;"></span><span class="alloc-name">Other</span><span class="alloc-pct" id="pct-oth">3.50%</span></div>
+        </div>
+      </div>
+      <div class="section-card" style="margin-bottom:12px;">
+        <div class="section-header">
+          <span class="section-title-text">Accounts</span>
+          <span class="section-link-pill">All <i class="ti ti-chevron-right" style="font-size:13px;"></i></span>
+        </div>
+        <div class="acct-tabs">
+          <button class="acct-tab active" onclick="this.parentNode.querySelectorAll('.acct-tab').forEach(t=>t.classList.remove('active'));this.classList.add('active')">Accounts</button>
+          <button class="acct-tab" onclick="this.parentNode.querySelectorAll('.acct-tab').forEach(t=>t.classList.remove('active'));this.classList.add('active')">Groups</button>
+        </div>
+        <div class="acct-item"><div><div class="a-main">ENGAGE · Advisory Accounts</div><div class="a-sub">••• 4521</div></div><i class="ti ti-chevron-right" style="font-size:16px;color:#ccc;"></i></div>
+        <div class="acct-item"><div><div class="a-main">PREMIER · Investment</div><div class="a-sub" id="disp-inv-sub">$1,284,600.00</div></div><i class="ti ti-chevron-right" style="font-size:16px;color:#ccc;"></i></div>
+        <div class="acct-item" style="border-bottom:none;"><div><div class="a-main">BANKING · Savings</div><div class="a-sub" id="disp-sav-sub">$793,798.48</div></div><i class="ti ti-chevron-right" style="font-size:16px;color:#ccc;"></i></div>
+      </div>
+    </div>
+    <div class="bottom-nav">
+      <div class="nav-item active" onclick="goScreen('screen-home',this)"><i class="ti ti-home"></i><span>Home</span></div>
+      <div class="nav-item" onclick="goScreen('screen-portfolio',this)"><i class="ti ti-briefcase"></i><span>Portfolio</span></div>
+      <div class="nav-item" onclick="goScreen('screen-messenger',this)"><i class="ti ti-message-2"></i><span>Messenger</span></div>
+      <div class="nav-item" onclick="goScreen('screen-markets',this)"><i class="ti ti-chart-line"></i><span>Markets</span></div>
+      <div class="nav-item" onclick="goScreen('screen-settings',this)"><i class="ti ti-settings"></i><span>Settings</span></div>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <div class="screen" id="screen-portfolio">
+    <div style="background:var(--card-bg);flex-shrink:0;padding-top:var(--safe-top);">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px 10px;">
+        <span style="font-size:28px;font-weight:700;">Portfolio</span>
+        <i class="ti ti-search" style="font-size:22px;"></i>
+      </div>
+      <div class="port-tab-row">
+        <div class="port-tab active">Positions</div>
+        <div class="port-tab">Performance</div>
+        <div class="port-tab">Transactions</div>
+        <div class="port-tab">Analytics</div>
+      </div>
+      <div class="filter-bar">
+        <div class="fb-left"><i class="ti ti-layout-grid" style="font-size:18px;"></i> All accounts <i class="ti ti-chevron-down" style="font-size:14px;"></i></div>
+        <i class="ti ti-adjustments-horizontal" style="font-size:20px;"></i>
+      </div>
+    </div>
+    <div class="scroll-area">
+      <div class="asset-block">
+        <div class="asset-header"><span class="asset-h-title">Fixed income &amp; Cash</span><span class="green-badge" id="fi-badge">35.60%</span></div>
+        <div class="pos-header"><span>Cash</span><span>Net cash value</span></div>
+        <div class="pos-row"><div class="flag-circle">🇦🇺</div><div class="pos-name">Australian Dollar</div><div class="pos-val" id="pos-aud">9,642.55 AUD</div></div>
+        <div class="pos-row"><div class="flag-circle">🇪🇺</div><div class="pos-name">Euro</div><div class="pos-val" id="pos-eur">48,320.75 EUR</div></div>
+        <div class="pos-row"><div class="flag-circle">🇬🇧</div><div class="pos-name">British Pound</div><div class="pos-val" id="pos-gbp">31,204.50 GBP</div></div>
+        <div class="pos-row"><div class="flag-circle">🇸🇬</div><div class="pos-name">Singapore Dollar</div><div class="pos-val" id="pos-sgd">42,180.00 SGD</div></div>
+        <div class="pos-row"><div class="flag-circle">🇺🇸</div><div class="pos-name">US Dollar</div><div class="pos-val" id="pos-usd">612,450.18 USD</div></div>
+      </div>
+      <div class="asset-block" style="margin-top:8px;">
+        <div class="pos-header" style="padding-top:12px;"><span>Extended fixed income</span><span>Mkt value, Unrealised P&amp;L</span></div>
+        <div style="padding:8px 16px;font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:6px;border-top:0.5px solid #f5f5f5;"><span class="info-circle">i</span> Updated as of previous business day.</div>
+        <div class="pos-row" style="flex-wrap:wrap;align-items:flex-start;">
+          <div style="flex:1;"><div class="pos-name" style="font-size:13px;line-height:1.4;">JPMorgan Funds JPM Global Bond Opps Fd Usd</div></div>
+          <div style="text-align:right;margin-left:8px;"><div class="pos-val">312,480.25 USD</div><div class="pos-chg pos">4,820 USD (+1.57%)</div></div>
+        </div>
+      </div>
+      <div class="asset-block" style="margin-top:8px;padding-bottom:8px;">
+        <div class="asset-header"><span class="asset-h-title">Equity</span><span class="green-badge" id="eq-badge">41.20%</span></div>
+        <div class="pos-header"><span>Position</span><span>Mkt value</span></div>
+        <div class="pos-row"><div class="flag-circle" style="background:#f0f4ff;font-size:13px;font-weight:700;color:#1565c0;">AAPL</div><div class="pos-name">Apple Inc.</div><div style="text-align:right;"><div class="pos-val">$213.49</div><div class="pos-chg pos">+1.2%</div></div></div>
+        <div class="pos-row"><div class="flag-circle" style="background:#f0f4ff;font-size:13px;font-weight:700;color:#1565c0;">MSFT</div><div class="pos-name">Microsoft Corp.</div><div style="text-align:right;"><div class="pos-val">$422.10</div><div class="pos-chg pos">+0.8%</div></div></div>
+        <div class="pos-row"><div class="flag-circle" style="background:#f0f4ff;font-size:13px;font-weight:700;color:#1565c0;">NVDA</div><div class="pos-name">NVIDIA Corp.</div><div style="text-align:right;"><div class="pos-val">$138.85</div><div class="pos-chg neg">-1.4%</div></div></div>
+      </div>
+    </div>
+    <div class="bottom-nav">
+      <div class="nav-item" onclick="goScreen('screen-home',this)"><i class="ti ti-home"></i><span>Home</span></div>
+      <div class="nav-item active" onclick="goScreen('screen-portfolio',this)"><i class="ti ti-briefcase"></i><span>Portfolio</span></div>
+      <div class="nav-item" onclick="goScreen('screen-messenger',this)"><i class="ti ti-message-2"></i><span>Messenger</span></div>
+      <div class="nav-item" onclick="goScreen('screen-markets',this)"><i class="ti ti-chart-line"></i><span>Markets</span></div>
+      <div class="nav-item" onclick="goScreen('screen-settings',this)"><i class="ti ti-settings"></i><span>Settings</span></div>
+    </div>
+  </div>
+
+  <!-- MESSENGER -->
+  <div class="screen" id="screen-messenger">
+    <div style="background:var(--card-bg);padding:calc(var(--safe-top) + 14px) 20px 14px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;border-bottom:0.5px solid var(--border);">
+      <span style="font-size:17px;font-weight:700;">Messenger</span>
+      <i class="ti ti-edit" style="font-size:20px;"></i>
+    </div>
+    <div style="background:var(--card-bg);padding:8px 16px 10px;display:flex;align-items:center;gap:10px;flex-shrink:0;border-bottom:0.5px solid var(--border);">
+      <div style="width:40px;height:40px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0;">JB</div>
+      <div><div style="font-size:14px;font-weight:600;">James Bennett</div><div style="font-size:12px;color:var(--text-muted);">Your relationship manager</div></div>
+    </div>
+    <div class="msg-list" id="msg-list">
+      <div class="msg-time">Today · 9:30 AM</div>
+      <div class="msg-bubble them">Good morning, Ayoub. Your portfolio is performing well this month. Would you like to schedule a review?</div>
+      <div class="msg-bubble me">Yes, let's set something up for next week.</div>
+      <div class="msg-bubble them">Of course. I've sent a calendar invite for Tuesday at 10 AM. Is there anything specific you'd like to discuss?</div>
+      <div class="msg-bubble me">I'd like to review our alternatives allocation.</div>
+      <div class="msg-bubble them">Noted. I'll prepare a full analysis on your alternatives exposure. Have a great day!</div>
+    </div>
+    <div class="msg-input-row">
+      <input id="msg-inp" placeholder="Message your advisor…"/>
+      <button class="msg-send-btn" onclick="sendMsg()"><i class="ti ti-send" style="font-size:16px;"></i></button>
+    </div>
+    <div class="bottom-nav">
+      <div class="nav-item" onclick="goScreen('screen-home',this)"><i class="ti ti-home"></i><span>Home</span></div>
+      <div class="nav-item" onclick="goScreen('screen-portfolio',this)"><i class="ti ti-briefcase"></i><span>Portfolio</span></div>
+      <div class="nav-item active" onclick="goScreen('screen-messenger',this)"><i class="ti ti-message-2"></i><span>Messenger</span></div>
+      <div class="nav-item" onclick="goScreen('screen-markets',this)"><i class="ti ti-chart-line"></i><span>Markets</span></div>
+      <div class="nav-item" onclick="goScreen('screen-settings',this)"><i class="ti ti-settings"></i><span>Settings</span></div>
+    </div>
+  </div>
+
+  <!-- MARKETS -->
+  <div class="screen" id="screen-markets">
+    <div style="background:var(--card-bg);padding:calc(var(--safe-top) + 14px) 20px 14px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">
+      <span style="font-size:28px;font-weight:700;">Markets</span>
+      <i class="ti ti-search" style="font-size:22px;"></i>
+    </div>
+    <div class="scroll-area">
+      <div class="section-card">
+        <div class="section-header"><span class="section-title-text">Watchlist</span></div>
+        <div class="mkt-item"><div><div class="mkt-ticker">AAPL</div><div class="mkt-name">Apple Inc.</div></div><div><div class="mkt-price">$213.49</div><div class="mkt-chg pos">+1.2%</div></div></div>
+        <div class="mkt-item"><div><div class="mkt-ticker">MSFT</div><div class="mkt-name">Microsoft Corp.</div></div><div><div class="mkt-price">$422.10</div><div class="mkt-chg pos">+0.8%</div></div></div>
+        <div class="mkt-item"><div><div class="mkt-ticker">NVDA</div><div class="mkt-name">NVIDIA Corp.</div></div><div><div class="mkt-price">$138.85</div><div class="mkt-chg neg">-1.4%</div></div></div>
+        <div class="mkt-item"><div><div class="mkt-ticker">SPX</div><div class="mkt-name">S&amp;P 500 Index</div></div><div><div class="mkt-price">5,892</div><div class="mkt-chg pos">+0.6%</div></div></div>
+        <div class="mkt-item" style="border-bottom:none;"><div><div class="mkt-ticker">XAUUSD</div><div class="mkt-name">Gold Spot</div></div><div><div class="mkt-price">$3,224</div><div class="mkt-chg pos">+0.3%</div></div></div>
+      </div>
+      <div style="padding:14px 14px 6px;font-size:13px;font-weight:700;color:var(--text-primary);">J.P. Morgan Insights</div>
+      <div class="insight-card"><div class="ins-tag">Global Strategy</div><div class="ins-title">Navigating rate uncertainty in 2025: what high-net-worth portfolios should consider</div><div class="ins-date">May 14, 2026</div></div>
+      <div class="insight-card"><div class="ins-tag">Private Markets</div><div class="ins-title">Why alternative allocations continue to outperform in the current cycle</div><div class="ins-date">May 12, 2026</div></div>
+      <div class="insight-card" style="margin-bottom:0;"><div class="ins-tag">Fixed Income</div><div class="ins-title">Bond market signals: reading the yield curve for portfolio positioning</div><div class="ins-date">May 10, 2026</div></div>
+    </div>
+    <div class="bottom-nav">
+      <div class="nav-item" onclick="goScreen('screen-home',this)"><i class="ti ti-home"></i><span>Home</span></div>
+      <div class="nav-item" onclick="goScreen('screen-portfolio',this)"><i class="ti ti-briefcase"></i><span>Portfolio</span></div>
+      <div class="nav-item" onclick="goScreen('screen-messenger',this)"><i class="ti ti-message-2"></i><span>Messenger</span></div>
+      <div class="nav-item active" onclick="goScreen('screen-markets',this)"><i class="ti ti-chart-line"></i><span>Markets</span></div>
+      <div class="nav-item" onclick="goScreen('screen-settings',this)"><i class="ti ti-settings"></i><span>Settings</span></div>
+    </div>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="screen" id="screen-settings">
+    <div style="background:var(--card-bg);padding:calc(var(--safe-top) + 14px) 20px 14px;flex-shrink:0;border-bottom:0.5px solid var(--border);">
+      <span style="font-size:28px;font-weight:700;">Settings</span>
+    </div>
+    <div class="scroll-area">
+      <div class="settings-profile">
+        <div class="profile-avatar" id="profile-avatar">AZ</div>
+        <div><div class="profile-name" id="disp-profile-name">Ayoub Zakkour</div><div class="profile-sub">Private Bank Client</div><div class="profile-badge">Priority Private</div></div>
+      </div>
+      <div class="settings-group-label">Preferences</div>
+      <div class="settings-group">
+        <div class="setting-row"><span>Currency display</span><span class="s-right">USD <i class="ti ti-chevron-right" style="font-size:14px;"></i></span></div>
+        <div class="setting-row"><span>Language</span><span class="s-right">English <i class="ti ti-chevron-right" style="font-size:14px;"></i></span></div>
+        <div class="setting-row"><span>Notifications</span><span class="s-right"><i class="ti ti-chevron-right" style="font-size:14px;"></i></span></div>
+      </div>
+      <div class="settings-group-label">Security</div>
+      <div class="settings-group">
+        <div class="setting-row"><span>Face ID / Biometrics</span><span class="s-on">On</span></div>
+        <div class="setting-row"><span>Two-factor authentication</span><span class="s-on">On</span></div>
+        <div class="setting-row"><span>Change PIN</span><span class="s-right"><i class="ti ti-chevron-right" style="font-size:14px;"></i></span></div>
+        <div class="setting-row" onclick="lockApp()"><span>Lock app</span><span class="s-right" style="color:#e53935;"><i class="ti ti-lock" style="font-size:16px;color:#e53935;"></i></span></div>
+      </div>
+      <div class="settings-group-label">Account Values</div>
+      <div class="settings-group">
+        <div class="setting-row" onclick="goScreen('screen-edit-values',null)" style="color:var(--teal);">
+          <span>Edit portfolio values</span><i class="ti ti-edit" style="font-size:18px;color:var(--teal);"></i>
+        </div>
+      </div>
+      <div style="height:16px;"></div>
+    </div>
+    <div class="bottom-nav">
+      <div class="nav-item" onclick="goScreen('screen-home',this)"><i class="ti ti-home"></i><span>Home</span></div>
+      <div class="nav-item" onclick="goScreen('screen-portfolio',this)"><i class="ti ti-briefcase"></i><span>Portfolio</span></div>
+      <div class="nav-item" onclick="goScreen('screen-messenger',this)"><i class="ti ti-message-2"></i><span>Messenger</span></div>
+      <div class="nav-item" onclick="goScreen('screen-markets',this)"><i class="ti ti-chart-line"></i><span>Markets</span></div>
+      <div class="nav-item active" onclick="goScreen('screen-settings',this)"><i class="ti ti-settings"></i><span>Settings</span></div>
+    </div>
+  </div>
+
+  <!-- EDIT VALUES -->
+  <div class="screen" id="screen-edit-values">
+    <div style="background:var(--card-bg);padding:calc(var(--safe-top) + 14px) 20px 14px;display:flex;align-items:center;gap:12px;flex-shrink:0;border-bottom:0.5px solid var(--border);">
+      <i class="ti ti-chevron-left" style="font-size:22px;cursor:pointer;" onclick="goScreen('screen-settings',null)"></i>
+      <span style="font-size:17px;font-weight:600;">Edit portfolio values</span>
+    </div>
+    <div class="scroll-area" style="background:#f2f2f7;">
+      <div class="settings-group-label">Your name</div>
+      <div class="edit-group"><div class="edit-field-row"><label>Display name</label><input id="inp-name" value="Ayoub Zakkour"/></div></div>
+      <div class="settings-group-label">Net market value</div>
+      <div class="edit-group">
+        <div class="edit-field-row"><label>Net market value (e.g. 2,078,398.48)</label><input id="inp-nmv" value="2,078,398.48"/></div>
+        <div class="edit-field-row"><label>Investments (e.g. 1.28M)</label><input id="inp-inv" value="1.28M"/></div>
+        <div class="edit-field-row"><label>Net cash (e.g. 0.94M)</label><input id="inp-cash" value="0.94M"/></div>
+        <div class="edit-field-row" style="border:none;"><label>Liabilities (e.g. -0.14M)</label><input id="inp-liab" value="-0.14M"/></div>
+      </div>
+      <div class="settings-group-label">Account balances</div>
+      <div class="edit-group">
+        <div class="edit-field-row"><label>Investment portfolio</label><input id="inp-inv2" value="$1,284,600.00"/></div>
+        <div class="edit-field-row" style="border:none;"><label>Savings account</label><input id="inp-sav" value="$793,798.48"/></div>
+      </div>
+      <div class="settings-group-label">Allocation %</div>
+      <div class="edit-group">
+        <div class="edit-field-row"><label>Equity %</label><input id="inp-eq" type="number" value="41.20"/></div>
+        <div class="edit-field-row"><label>Fixed income &amp; cash %</label><input id="inp-fi" type="number" value="35.60"/></div>
+        <div class="edit-field-row"><label>Alternative assets %</label><input id="inp-alt" type="number" value="12.30"/></div>
+        <div class="edit-field-row"><label>Diversified strategies %</label><input id="inp-div" type="number" value="7.40"/></div>
+        <div class="edit-field-row" style="border:none;"><label>Other %</label><input id="inp-oth" type="number" value="3.50"/></div>
+      </div>
+      <div class="settings-group-label">Portfolio positions</div>
+      <div class="edit-group">
+        <div class="edit-field-row"><label>Fixed income badge %</label><input id="inp-fibadge" value="35.60%"/></div>
+        <div class="edit-field-row"><label>USD cash</label><input id="inp-usd" value="612,450.18 USD"/></div>
+        <div class="edit-field-row"><label>EUR cash</label><input id="inp-eur" value="48,320.75 EUR"/></div>
+        <div class="edit-field-row"><label>GBP cash</label><input id="inp-gbp" value="31,204.50 GBP"/></div>
+        <div class="edit-field-row"><label>SGD cash</label><input id="inp-sgd" value="42,180.00 SGD"/></div>
+        <div class="edit-field-row" style="border:none;"><label>AUD cash</label><input id="inp-aud" value="9,642.55 AUD"/></div>
+      </div>
+      <button class="save-btn" onclick="saveValues()">Save &amp; apply</button>
+      <div style="height:20px;"></div>
+    </div>
+    <div class="bottom-nav">
+      <div class="nav-item" onclick="goScreen('screen-home',this)"><i class="ti ti-home"></i><span>Home</span></div>
+      <div class="nav-item" onclick="goScreen('screen-portfolio',this)"><i class="ti ti-briefcase"></i><span>Portfolio</span></div>
+      <div class="nav-item" onclick="goScreen('screen-messenger',this)"><i class="ti ti-message-2"></i><span>Messenger</span></div>
+      <div class="nav-item" onclick="goScreen('screen-markets',this)"><i class="ti ti-chart-line"></i><span>Markets</span></div>
+      <div class="nav-item active"><i class="ti ti-settings"></i><span>Settings</span></div>
+    </div>
+  </div>
+
+</div><!-- main-app -->
+</div><!-- app -->
+
+<script>
+// ── DEFAULT DATA ──────────────────────────────────────────────
+var DEFAULTS = {
+  name:'Ayoub Zakkour',
+  nmv:'2,078,398.48',inv:'1.28M',cash:'0.94M',liab:'-0.14M',
+  inv2:'$1,284,600.00',sav:'$793,798.48',
+  eq:41.20,fi:35.60,alt:12.30,div:7.40,oth:3.50,
+  fibadge:'35.60%',
+  usd:'612,450.18 USD',eur:'48,320.75 EUR',gbp:'31,204.50 GBP',
+  sgd:'42,180.00 SGD',aud:'9,642.55 AUD'
+};
+
+// ── STORAGE HELPERS ───────────────────────────────────────────
+function storeSave(data){ try{ localStorage.setItem('jpm_data', JSON.stringify(data)); }catch(e){} }
+function storeLoad(){ try{ var d=localStorage.getItem('jpm_data'); return d?JSON.parse(d):null; }catch(e){ return null; } }
+function storeSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+function storeGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+
+// ── APPLY DATA TO UI ──────────────────────────────────────────
+function applyData(d){
+  var name = d.name||'Ayoub Zakkour';
+  var initials = name.trim().split(' ').map(function(p){return p[0]||'';}).join('').toUpperCase().slice(0,2);
+  document.getElementById('disp-welcome-name').textContent = name;
+  document.getElementById('disp-profile-name').textContent = name;
+  document.getElementById('profile-avatar').textContent = initials;
+  document.getElementById('lock-welcome-name').innerHTML = 'Welcome back,<br/>'+(name.split(' ')[0]||name);
+  document.getElementById('disp-nmv').textContent = d.nmv;
+  document.getElementById('disp-inv').textContent = d.inv;
+  document.getElementById('disp-cash').textContent = d.cash;
+  document.getElementById('disp-liab').textContent = d.liab;
+  document.getElementById('disp-inv-sub').textContent = d.inv2;
+  document.getElementById('disp-sav-sub').textContent = d.sav;
+  var eq=parseFloat(d.eq)||0, fi=parseFloat(d.fi)||0, alt=parseFloat(d.alt)||0, dv=parseFloat(d.div)||0, oth=parseFloat(d.oth)||0;
+  document.getElementById('seg-eq').style.flex=eq;
+  document.getElementById('seg-fi').style.flex=fi;
+  document.getElementById('seg-alt').style.flex=alt;
+  document.getElementById('seg-div').style.flex=dv;
+  document.getElementById('seg-oth').style.flex=oth;
+  document.getElementById('pct-eq').textContent=eq.toFixed(2)+'%';
+  document.getElementById('pct-fi').textContent=fi.toFixed(2)+'%';
+  document.getElementById('pct-alt').textContent=alt.toFixed(2)+'%';
+  document.getElementById('pct-div').textContent=dv.toFixed(2)+'%';
+  document.getElementById('pct-oth').textContent=oth.toFixed(2)+'%';
+  document.getElementById('eq-badge').textContent=eq.toFixed(2)+'%';
+  document.getElementById('fi-badge').textContent=d.fibadge;
+  document.getElementById('pos-usd').textContent=d.usd;
+  document.getElementById('pos-eur').textContent=d.eur;
+  document.getElementById('pos-gbp').textContent=d.gbp;
+  document.getElementById('pos-sgd').textContent=d.sgd;
+  document.getElementById('pos-aud').textContent=d.aud;
+  // sync edit fields
+  document.getElementById('inp-name').value=d.name;
+  document.getElementById('inp-nmv').value=d.nmv;
+  document.getElementById('inp-inv').value=d.inv;
+  document.getElementById('inp-cash').value=d.cash;
+  document.getElementById('inp-liab').value=d.liab;
+  document.getElementById('inp-inv2').value=d.inv2;
+  document.getElementById('inp-sav').value=d.sav;
+  document.getElementById('inp-eq').value=d.eq;
+  document.getElementById('inp-fi').value=d.fi;
+  document.getElementById('inp-alt').value=d.alt;
+  document.getElementById('inp-div').value=d.div;
+  document.getElementById('inp-oth').value=d.oth;
+  document.getElementById('inp-fibadge').value=d.fibadge;
+  document.getElementById('inp-usd').value=d.usd;
+  document.getElementById('inp-eur').value=d.eur;
+  document.getElementById('inp-gbp').value=d.gbp;
+  document.getElementById('inp-sgd').value=d.sgd;
+  document.getElementById('inp-aud').value=d.aud;
+}
+
+// ── INIT: load saved data or defaults ────────────────────────
+(function init(){
+  var saved = storeLoad();
+  applyData(saved || DEFAULTS);
+})();
+
+// ── FACE ID ───────────────────────────────────────────────────
+// storeGet('jpm_cred_id') — stored as base64 after first registration
+function doFaceID(){
+  var overlay = document.getElementById('scan-overlay');
+  overlay.classList.add('show');
+  var credId = storeGet('jpm_cred_id');
+  if(!window.PublicKeyCredential){
+    // No WebAuthn support — just unlock after animation
+    setTimeout(unlockApp, 1800); return;
+  }
+  var challenge = new Uint8Array(32);
+  window.crypto.getRandomValues(challenge);
+  if(credId){
+    // ── RETURNING USER: authenticate with existing credential ──
+    var credIdBytes = base64ToUint8(credId);
+    navigator.credentials.get({
+      publicKey:{
+        challenge:challenge,
+        userVerification:'required',
+        timeout:30000,
+        allowCredentials:[{type:'public-key', id:credIdBytes}]
+      }
+    }).then(function(){ unlockApp(); })
+    .catch(function(){
+      // Fallback if credential gone (e.g. cleared) — try fresh register
+      storeSet('jpm_cred_id','');
+      doFaceIDRegister(challenge);
+    });
+  } else {
+    // ── FIRST TIME: register a new credential ──
+    doFaceIDRegister(challenge);
+  }
+}
+
+function doFaceIDRegister(challenge){
+  navigator.credentials.create({
+    publicKey:{
+      challenge:challenge,
+      rp:{name:'J.P. Morgan Private Bank', id:location.hostname||'localhost'},
+      user:{id:new Uint8Array(16), name:'ayoub.zakkour', displayName:'Ayoub Zakkour'},
+      pubKeyCredParams:[{alg:-7,type:'public-key'}],
+      authenticatorSelection:{authenticatorAttachment:'platform',userVerification:'required'},
+      timeout:30000
+    }
+  }).then(function(cred){
+    // Save credential id so next time we use get() not create()
+    storeSet('jpm_cred_id', uint8ToBase64(new Uint8Array(cred.rawId)));
+    unlockApp();
+  }).catch(function(){
+    setTimeout(unlockApp, 1800);
+  });
+}
+
+function uint8ToBase64(bytes){
+  var binary='';
+  bytes.forEach(function(b){ binary+=String.fromCharCode(b); });
+  return btoa(binary);
+}
+function base64ToUint8(b64){
+  var binary=atob(b64), bytes=new Uint8Array(binary.length);
+  for(var i=0;i<binary.length;i++) bytes[i]=binary.charCodeAt(i);
+  return bytes;
+}
+
+function unlockApp(){
+  document.getElementById('scan-overlay').classList.remove('show');
+  document.getElementById('lock-screen').classList.add('hidden');
+  var m=document.getElementById('main-app');
+  m.classList.add('show');
+  m.style.opacity='0'; m.style.transform='scale(0.97)';
+  m.style.transition='opacity 0.35s ease,transform 0.35s ease';
+  setTimeout(function(){ m.style.opacity='1'; m.style.transform='scale(1)'; },20);
+}
+
+function lockApp(){
+  document.getElementById('main-app').classList.remove('show');
+  document.getElementById('lock-screen').classList.remove('hidden');
+}
+
+// ── NAVIGATION ────────────────────────────────────────────────
+function goScreen(id, navEl){
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  if(navEl){
+    var nav=navEl.closest('.bottom-nav');
+    if(nav){ nav.querySelectorAll('.nav-item').forEach(function(n){ n.classList.remove('active'); }); navEl.classList.add('active'); }
+  }
+}
+
+// ── SAVE VALUES ───────────────────────────────────────────────
+function saveValues(){
+  var d={
+    name:document.getElementById('inp-name').value||'Ayoub Zakkour',
+    nmv:document.getElementById('inp-nmv').value,
+    inv:document.getElementById('inp-inv').value,
+    cash:document.getElementById('inp-cash').value,
+    liab:document.getElementById('inp-liab').value,
+    inv2:document.getElementById('inp-inv2').value,
+    sav:document.getElementById('inp-sav').value,
+    eq:parseFloat(document.getElementById('inp-eq').value)||0,
+    fi:parseFloat(document.getElementById('inp-fi').value)||0,
+    alt:parseFloat(document.getElementById('inp-alt').value)||0,
+    div:parseFloat(document.getElementById('inp-div').value)||0,
+    oth:parseFloat(document.getElementById('inp-oth').value)||0,
+    fibadge:document.getElementById('inp-fibadge').value,
+    usd:document.getElementById('inp-usd').value,
+    eur:document.getElementById('inp-eur').value,
+    gbp:document.getElementById('inp-gbp').value,
+    sgd:document.getElementById('inp-sgd').value,
+    aud:document.getElementById('inp-aud').value
+  };
+  storeSave(d);
+  applyData(d);
+  goScreen('screen-home',null);
+  var homeNav=document.querySelector('#screen-home .bottom-nav .nav-item:first-child');
+  if(homeNav){ document.querySelector('#screen-home .bottom-nav').querySelectorAll('.nav-item').forEach(function(n){ n.classList.remove('active'); }); homeNav.classList.add('active'); }
+}
+
+// ── MESSENGER ────────────────────────────────────────────────
+function sendMsg(){
+  var inp=document.getElementById('msg-inp');
+  var txt=inp.value.trim(); if(!txt) return;
+  var list=document.getElementById('msg-list');
+  var b=document.createElement('div'); b.className='msg-bubble me'; b.textContent=txt;
+  list.appendChild(b); inp.value=''; list.scrollTop=list.scrollHeight;
+  setTimeout(function(){
+    var r=document.createElement('div'); r.className='msg-bubble them';
+    r.textContent='Thank you for your message, Ayoub. I will review this and get back to you shortly.';
+    list.appendChild(r); list.scrollTop=list.scrollHeight;
+  },1200);
+}
+document.getElementById('msg-inp').addEventListener('keydown',function(e){ if(e.key==='Enter') sendMsg(); });
+</script>
+</body>
+</html>
